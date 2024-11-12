@@ -2,3 +2,4 @@ env
 aphasia-chatter-5a70166fc2f1.json
 samples
 __pycache__
+.env
