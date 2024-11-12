@@ -107,3 +107,12 @@ Request Body:
 ```
 audiofile: <Audio File (.m4a, .wav, etc.)>
 ```
+
+Expected Response:
+
+```
+{
+	"status": "SUCCESS",
+	"transcription": "! I don't know how to smile, Smiling Face, I think."
+}
+```
