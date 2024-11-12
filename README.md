@@ -68,21 +68,21 @@ You will be prompted to enter the Hugging Face credentials to gain access to the
 
 ### Step 4: Use the API
 
-The application will run on port `50001`. In your Vast.ai instance, you can see which external port is mapped to the internal port `50001` by clicking over the external IP of your running instance. Once you click it, you can see something like this:
+The application will run on port `50001`. In your Vast.ai instance, you can see which external port is mapped to the internal port `50001` by clicking over the public IP of your running instance. Once you click it, you can see something like this:
 
 ```
 Open Ports
 
 172.81.127.5:63678 -> 22/tcp
 172.81.127.5:63952 -> 50001/tcp
-<EXTERNAL_IP>:<EXTERNAL_PORT> -> <INTERNAL_IP>/tcp
+<PUBLIC IP>:<EXTERNAL_PORT> -> <INTERNAL_IP>/tcp
 
 ```
 
-As you can see, external port `63952` is mapped to internal port `50001`, which is what our application is running on. This is just an example, as external port and external IPs can change. So, you can access the endpoint at:
+As you can see, external port `63952` is mapped to internal port `50001`, which is what our application is running on. This is just an example, as external port and public IPs can change. So, you can access the endpoint at:
 
 ```
-https://<EXTERNAL_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>
+https://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>
 ```
 
 Use these parameters to transcribe:
@@ -92,7 +92,7 @@ Request Type: `POST`
 Request Endpoint:
 
 ```
-https://<EXTERNAL_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>/transcribe
+https://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>/transcribe
 ```
 
 Request Headers:
