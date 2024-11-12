@@ -1,6 +1,6 @@
-from fastapi import FastAPI, File, HTTPException, UploadFile
-import librosa
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from model.model import WhisperForSingaporeAphasia
+import librosa
 from tempfile import NamedTemporaryFile
 
 VALID_AUDIO_TYPES = {
@@ -20,7 +20,7 @@ app = FastAPI()
 model = WhisperForSingaporeAphasia()
 
 @app.post("/transcribe/", status_code=200)
-async def trandscribe(audiofile: UploadFile = File(...)):
+async def transcribe(audiofile: UploadFile = File(...)):
     if audiofile.content_type not in VALID_AUDIO_TYPES:
         raise HTTPException(
             status_code=415,
