@@ -22,7 +22,7 @@ huggingface-cli login --token "$HF_TOKEN"
 
 # Get the public IP and output the access URL
 PUBLIC_IP=$(curl -s ifconfig.me)
-echo "Your FastAPI app is running at: http://$PUBLIC_IP:70001"
+echo "Your FastAPI app is running at: http://$PUBLIC_IP:50001"
 
 # Run the application
-uvicorn main:app --host 0.0.0.0 --port 70001
+uvicorn main:app --host 0.0.0.0 --port 50001
