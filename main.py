@@ -13,19 +13,23 @@ VALID_AUDIO_TYPES = {
     "audio/flac",
     "audio/ogg",
     "audio/x-aiff",
-    "audio/wma"
+    "audio/wma",
+    "audio/wave"
 }
 
 app = FastAPI()
 model = WhisperForSingaporeAphasia()
 
 @app.post("/transcribe/", status_code=200)
-async def transcribe(audiofile: UploadFile = File(...)):
+async def transcribe(audiofile: UploadFile = File(...), target_word: str = ""):
+    print(audiofile.content_type)
     if audiofile.content_type not in VALID_AUDIO_TYPES:
         raise HTTPException(
             status_code=415,
             detail="Unsupported audio file type. Please upload a valid audio file."
         )
+    
+    input_prompt = "" if target_word == "" else f"The patient is supposed to say '{target_word}'."
     
     # Writes the content to a temporary file, then load the waveform from there
     try:
@@ -41,7 +45,7 @@ async def transcribe(audiofile: UploadFile = File(...)):
         )
 
     try:
-        transcription = model.transcribe(waveform)
+        transcription = model.transcribe(waveform, 16000, input_prompt)
     except Exception as e:
         raise HTTPException(
             status_code=415,
