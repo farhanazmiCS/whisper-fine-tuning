@@ -82,7 +82,7 @@ Open Ports
 As you can see, external port `63952` is mapped to internal port `50001`, which is what our application is running on. This is just an example, as external port and public IPs can change. So, you can access the endpoint at:
 
 ```
-https://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>
+http://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>
 ```
 
 Use these parameters to transcribe:
@@ -92,7 +92,7 @@ Request Type: `POST`
 Request Endpoint:
 
 ```
-https://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>/transcribe
+http://<PUBLIC_IP>:<EXTERNAL_PORT_THAT_MAPS_TO_INTERNAL_PORT_50001>/transcribe
 ```
 
 Request Headers:
