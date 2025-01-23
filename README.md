@@ -64,7 +64,7 @@ Run:
 
 #### 3.3 Enter Hugging Face Credentials
 
-You will be prompted to enter the Hugging Face credentials to gain access to the model. Consult Farhan for details.
+You will be prompted to enter the Hugging Face credentials to gain access to the model. Consult @farhanazmiCS for details.
 
 ### Step 4: Use the API
 
